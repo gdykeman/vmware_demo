@@ -4,4 +4,5 @@
 
   tasks:
     - name: Include appropriate tasks
-      include_tasks: "{{ vm_template }}.yaml"
+      include_tasks: "tasks/{{ vm_template }}.yaml"
+      delegate_to: localhost
