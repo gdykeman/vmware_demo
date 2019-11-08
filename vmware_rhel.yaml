@@ -5,3 +5,9 @@
   tasks:
     - name: Check connectivity
       ping:
+    
+    - name: Configure MOTD
+      copy:
+        src: files/motd
+        dest: /etc/motd
+        mode: 0644
