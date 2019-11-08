@@ -1,5 +1,5 @@
 - name: Post provisioning
-  hosts: "{{ vm_name | default('rheltest') }}"
+  hosts: "{{ vm_name | default('wintest') }}"
 
   tasks:
     - name: Ping
