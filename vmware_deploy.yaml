@@ -19,4 +19,4 @@
       register: deploy
     
     - debug:
-        msg: "{{ deploy }}"
+        msg: "{{ deploy.instance.hw_eth0.ipaddresses[0] }}"
