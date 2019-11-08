@@ -1,4 +1,4 @@
-- name: Deploy VM from template
+- name: Deploy RHEL VM from template
   hosts: localhost
   become: no
 

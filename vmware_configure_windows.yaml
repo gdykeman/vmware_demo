@@ -1,0 +1,11 @@
+- name: Post provisioning
+  hosts: "{{ vm_name | default('rheltest') }}"
+
+  tasks:
+    - name: Ping
+      win_ping:
+      
+    - name: Ensure user bob is present
+      win_user:
+        name: bob
+        state: present

@@ -1,7 +1,0 @@
-- name: Post provisioning
-  hosts: "{{ vm_name | default('rheltest') }}"
-  become: yes
-
-  tasks:
-    - name: Include appropriate tasks
-      include_tasks: "tasks/{{ vm_template }}.yaml"

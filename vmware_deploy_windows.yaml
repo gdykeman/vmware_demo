@@ -1,0 +1,19 @@
+- name: Deploy Windows VM from template
+  hosts: localhost
+  become: no
+
+  tasks:
+    - name: Create a virtual machine from a template
+      vmware_guest:
+        template: "{{ vm_template | default('rhel76-template') }}"
+        validate_certs: no
+        esxi_hostname: 10.100.1.33
+        datacenter: Datacenter
+        folder: rhel
+        name: "{{ vm_name | default('rheltest') }}"
+        state: poweredon
+        datastore: esx_share
+        networks:
+          - name: VM Network
+        wait_for_ip_address: yes
+      register: deploy
