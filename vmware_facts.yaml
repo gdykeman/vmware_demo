@@ -1,0 +1,11 @@
+- name: Deploy VM from template
+  hosts: localhost
+  become: no
+
+  tasks:
+    - name: Provide information about vCenter
+      vmware_about_facts:
+      register: vcenter_about_info
+    
+    - debug:
+        msg: "{{ vcenter_about_info }}"
