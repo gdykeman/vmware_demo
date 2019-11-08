@@ -5,12 +5,12 @@
   tasks:
     - name: Create a virtual machine from a template
       vmware_guest:
-        template: "{{ vm_template | default('rhel76-template') }}"
+        template: "{{ vm_template | default('winserver2016-template') }}"
         validate_certs: no
         esxi_hostname: 10.100.1.33
         datacenter: Datacenter
-        folder: rhel
-        name: "{{ vm_name | default('rheltest') }}"
+        folder: vms
+        name: "{{ vm_name | default('wintest') }}"
         state: poweredon
         datastore: esx_share
         networks:

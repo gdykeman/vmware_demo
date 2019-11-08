@@ -9,7 +9,7 @@
         validate_certs: no
         esxi_hostname: 10.100.1.33
         datacenter: Datacenter
-        folder: rhel
+        folder: vms
         name: "{{ vm_name | default('rheltest') }}"
         state: poweredon
         datastore: esx_share
