@@ -7,7 +7,7 @@
       ping:
     
     - name: Configure MOTD
-      copy:
-        src: files/motd
+      template:
+        src: templates/motd.j2
         dest: /etc/motd
         mode: 0644
