@@ -20,3 +20,4 @@
     
     - debug:
         msg: "{{ deploy.instance.hw_eth0.ipaddresses[0] }}"
+

@@ -1,0 +1,7 @@
+- name: Deploy VM from template
+  hosts: rheltest
+  become: yes
+
+  tasks:
+    - name: Check connectivity
+      ping:
