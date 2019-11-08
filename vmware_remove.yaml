@@ -1,0 +1,16 @@
+- name: Deploy VM from template
+  hosts: localhost
+  become: no
+
+  tasks:
+    - name: Remove VM due to failure
+      vmware_guest:
+        validate_certs: no
+        esxi_hostname: 10.100.1.33
+        datacenter: Datacenter
+        folder: rhel
+        name: rheltest
+        state: poweredon
+        datastore: esx_share
+        state: absent
+      register: deploy
