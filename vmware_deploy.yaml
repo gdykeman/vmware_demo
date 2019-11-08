@@ -1,0 +1,21 @@
+- name: Deploy VM from template
+  hosts: localhost
+  become: no
+
+  tasks:
+    - name: Create a virtual machine from a template
+      vmware_guest:
+        template: rhel76-template
+        validate_certs: no
+        esxi_hostname: 10.100.1.33
+        folder: /rhel
+        name: rheltest
+        state: poweredon
+        datastore: esx_share
+        networks:
+          - name: VM Network
+        wait_for_ip_address: yes
+      register: deploy
+    
+    - debug:
+        msg: "{{ deploy }}"
