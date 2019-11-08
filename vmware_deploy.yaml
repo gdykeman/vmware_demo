@@ -9,6 +9,7 @@
         validate_certs: no
         esxi_hostname: 10.100.1.33
         datacenter: Datacenter
+        folder: rhel
         name: rheltest
         state: poweredon
         datastore: esx_share
