@@ -1,5 +1,5 @@
 - name: Deploy VM from template
-  hosts: rheltest
+  hosts: "{{ vm_name | default('rheltest') }}"
   become: yes
 
   tasks:

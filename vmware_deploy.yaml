@@ -5,12 +5,12 @@
   tasks:
     - name: Create a virtual machine from a template
       vmware_guest:
-        template: rhel76-template
+        template: "{{ vm_template | default('rhel76-template') }}"
         validate_certs: no
         esxi_hostname: 10.100.1.33
         datacenter: Datacenter
         folder: rhel
-        name: rheltest
+        name: "{{ vm_name | default('rheltest') }}"
         state: poweredon
         datastore: esx_share
         networks:
@@ -20,4 +20,3 @@
     
     - debug:
         msg: "{{ deploy.instance.hw_eth0.ipaddresses[0] }}"
-
