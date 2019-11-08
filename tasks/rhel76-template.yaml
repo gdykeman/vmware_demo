@@ -1,3 +1,6 @@
+- name: Ping
+  ping:
+  
 - name: Configure MOTD
   template:
     src: templates/motd.j2

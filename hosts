@@ -1,0 +1,2 @@
+[windows]
+win1 ansible_host=10.100.3.216
